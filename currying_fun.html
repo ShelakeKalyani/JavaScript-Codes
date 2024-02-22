@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Currying Function</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Addition(a)
+		{
+			return function(b){
+				return function(c){
+					return a+b+c;
+				}
+			}
+		}
+
+		var ans = Addition(10);
+		var ans2 = ans(20);
+		var ans3 = ans2(20);
+		console.log(ans3);
+
+		var final_ans = Addition(5)(5)(5);
+		console.log(final_ans);
+	</script>
+
+</body>
+</html>
